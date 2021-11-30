@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   public appEnum = APP_ENUM_TYPE;
   public isApiCallInProgress: boolean = false;
 
-  constructor(private _productService: ProductService) {}
+  constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
     this.getProductList();
@@ -29,18 +29,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
    */
   private getProductList() {
     this.isApiCallInProgress = true;
-    this._ApiSubscription = this._productService
-      .getProductList()
-      .pipe(first())
-      .subscribe(
-        (response) => {
-          this.products = response;
-          this.isApiCallInProgress = false;
-        },
-        (error) => {
-          this.isApiCallInProgress = false;
-        }
-      );
+    this._ApiSubscription = this._productService.getProductList().pipe(first()).subscribe((response) => {
+      this.products = response;
+      this.isApiCallInProgress = false;
+    }, (error) => {
+      this.isApiCallInProgress = false;
+    });
   }
 
   /**

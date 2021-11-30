@@ -1,0 +1,131 @@
+.home-section{
+    // background-color: pink;
+}
+.banner-item{
+    padding: 2em 0;
+    position: relative;
+    .bannerWrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        width: calc(100vw - 200px);
+        align-items: center;
+        display: flex;
+    }
+}
+.horizTranslate{
+    position: relative;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    align-items: center;
+    display: flex;
+    left: unset;
+    transform: translate3d(calc(-1 * 900px),0,0);
+    width: 900px;
+    width: 18900px;
+    transition: transform 1s ease-in-out;
+}
+.banner-view{
+    display: flex;
+    margin: 0 10px;
+    vertical-align: top;
+    position: relative;
+    width: 900px;
+    height: calc(900px * .341);
+    border-radius: 8px;
+    overflow: hidden;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        height: calc(.341 * 900px);
+    }
+}
+
+.slider-btns{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    width: 10%;
+    height: 100%;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    button{
+        min-width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        fill:#fff;
+        svg{
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            fill:inherit;
+        }
+    }
+}
+.slider-btns.pre{
+    left: 0;
+    button{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+.slider-btns.next{
+    right: 0;
+}
+
+.inner-heading{
+    padding: 0 15px;
+    .heading{
+        color: #fff;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #dddddd;
+        span{
+            background-color: #5541fe;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    }
+}
+
+.route-view-card{
+    margin-bottom: 30px;
+    .inner-route-card{
+        background-color:#ffbf00;
+        padding-bottom: 40%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+        .card-info{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(4, 4, 4, 0.33);
+            .card-title{
+                color: #fff;
+            }
+        }
+    }
+    .inner-route-card:hover{
+        box-shadow: 0 2px 2px #919191;
+    }
+    .active-route{
+        background-color: #6161ff;
+    }
+}

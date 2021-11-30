@@ -15,7 +15,7 @@ export class TableComponent implements OnInit, OnDestroy {
   public isApiCallInProgress: boolean = false;
   public sortingName = SORT_NAME;
 
-  constructor(private _tableService: TableService) {}
+  constructor(private _tableService: TableService) { }
 
   ngOnInit(): void {
     this.getUserListing();
@@ -27,19 +27,14 @@ export class TableComponent implements OnInit, OnDestroy {
    */
   private getUserListing() {
     this.isApiCallInProgress = true;
-    this._ApiSubscription = this._tableService
-      .getUserListing()
-      .pipe(first())
-      .subscribe(
-        (response) => {
-          this.users = response;
-          this.isApiCallInProgress = false;
-        },
-        (error) => {
-          this.isApiCallInProgress = false;
-          //Error
-        }
-      );
+    this._ApiSubscription = this._tableService.getUserListing().pipe(first()).subscribe((response) => {
+      this.users = response;
+      this.isApiCallInProgress = false;
+    },(error) => {
+        this.isApiCallInProgress = false;
+        //Error
+      }
+    );
   }
 
   /**

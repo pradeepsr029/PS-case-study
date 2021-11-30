@@ -77,9 +77,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
 
   /******Reset Timer*******/
   private reset() {
-    if (!this.timer) {
-      return;
-    }
+    if (!this.timer) {return;}
     this.countDownTiming = 0;
     this.clearTimeInterval();
   }
