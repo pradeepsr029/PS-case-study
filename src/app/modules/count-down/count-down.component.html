@@ -1,0 +1,24 @@
+<sap-header cls="count-theme"></sap-header>
+
+<div class="row">
+    <div class="container">
+        <h1>Count down timer with {{(routeType == counterRouteType.DEFAULT ? 'Input/Output' : 'Subject')}}</h1>
+        <div class="full dft">
+            <section class="_u-flex0 timer-counter-view">
+            <sap-timer-counter-rendered [count]="countDownTiming"></sap-timer-counter-rendered>
+            </section>
+            <section class="_u-flex1 timer-counter-action">
+                <sap-timer-counter-actions [routeType]="routeType" (timerActionCallback)="counterChildrenEvents($event)"></sap-timer-counter-actions>
+            </section>
+        </div>
+        <div class="full dft dft-2-row">
+            <section class="_u-flex0 timer-count-logs">
+                <sap-timer-counter-logs [logs]="timerLogs"></sap-timer-counter-logs>
+            </section>
+            <section class="_u-flex1 timer-count-tracker">
+                <sap-timer-counter-tracker [logs]="timerTracker"></sap-timer-counter-tracker>
+            </section>
+
+        </div>
+    </div>
+</div>

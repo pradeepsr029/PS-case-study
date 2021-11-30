@@ -1,0 +1,16 @@
+<div class="inner-body-timer-logs">
+    <div class="action-input-btn-cover">
+        <div class="dft">
+            <div class="_u-flex2">Enter Timer Limit</div>
+            <div class="_u-flex1">
+                <div class="row">
+                    <input type="number" #numberInput placeholder="Please enter number">
+                </div>
+                <div class="action-btns">
+                    <button type="button" class="btn-n btn-start" (click)="actionEvent(numberInput, 'START')">Start</button>
+                    <button type="reset" class="btn-n btn-reset" (click)="actionEvent(numberInput, 'RESET')">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

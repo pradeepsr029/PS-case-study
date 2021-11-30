@@ -1,0 +1,5 @@
+<div class="inner-body-logs">
+    <ng-container *ngFor="let log of logs">
+        <p [ngClass]="(log?.type | lowercase)"><span>{{(log?.type=="STARTED" ? "Started" : "Paused")}} at</span>{{log?.time | date:"medium"}}</p>
+    </ng-container>
+</div>

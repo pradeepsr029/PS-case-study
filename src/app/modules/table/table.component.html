@@ -1,0 +1,33 @@
+<sap-header cls="table-theme"></sap-header>
+
+<section>
+    <div class="row">
+        <div class="container">
+            <div class="full full-table-view">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name <sap-sort-btn (sortCallback)="sorting($event, sortingName.NAME)"></sap-sort-btn></th>
+                        <th>Username <sap-sort-btn (sortCallback)="sorting($event, sortingName.USERNAME)"></sap-sort-btn></th>
+                        <th>Email <sap-sort-btn (sortCallback)="sorting($event, sortingName.EMAIL)"></sap-sort-btn></th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                    <ng-container *ngFor="let user of users">
+                        <tr>
+                            <td>{{user?.id}}</td>
+                            <td>{{user?.name?.firstname}} {{user?.name?.lastname}}</td>
+                            <td>{{user?.username}}</td>
+                            <td>{{user?.email}}</td>
+                            <td>{{user?.phone}}</td>
+                            <td>{{user?.address?.city}}, {{user?.address?.street}} {{user?.address?.zipcode}}</td>
+                        </tr>
+                    </ng-container>
+                    <tr *ngIf="isApiCallInProgress">
+                        <td colspan="6" class="tc">Loading... please wait</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

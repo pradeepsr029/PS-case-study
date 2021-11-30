@@ -1,0 +1,36 @@
+.action-input-btn-cover {
+  padding: 10px;
+  .dft {
+    align-items: inherit;
+  }
+  ._u-flex1 {
+    margin-left: 10px;
+  }
+  .action-btns {
+    padding-top: 10px;
+    button:not(:first-child) {
+      margin-left: 10px;
+    }
+    button {
+      transform: scale(0.8);
+      transform-origin: left top;
+    }
+  }
+}
+.btn-start {
+  background-color: var(--app);
+  color: var(--white);
+}
+.btn-reset {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+input {
+  min-width: 200px;
+  padding: 5px;
+  border-radius: 4px;
+  outline: none;
+  min-height: 30px;
+  border: 1px solid #afafaf;
+}
