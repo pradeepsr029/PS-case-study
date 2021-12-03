@@ -1,19 +1,23 @@
-.ui-lg-6 {
-  // border: 1px solid black;
-  min-height: 150px;
+.title-heading{
+  padding: 0 15px;
+  margin-top: 2em;
 }
-.full {
+.ui-column-wap{
+  margin-top: 2em;
   border: 1px solid #cfcfcf;
-}
-._u-flex0,
-._u-flex1 {
-  width: 50%;
-  min-height: 100px;
-}
-.dft-2-row {
-  border-top: none;
-}
-.timer-count-logs,
-.timer-counter-view {
-  border-right: 1px solid #cfcfcf;
+  border-radius: 4px;
+  overflow: hidden;
+  .ui-column{
+    position: relative;
+    width: 100%;
+    .ui-lg-6{
+      min-height: 100px;
+    }
+  }
+  .ui-column:first-child{
+    border-bottom: 1px solid #cfcfcf;
+  }  
+  .ui-column .ui-lg-6:first-child{
+    border-right: 1px solid #cfcfcf;
+  }
 }

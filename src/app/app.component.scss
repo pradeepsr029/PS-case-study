@@ -1,4 +1,4 @@
-#masthead-container{
+#masthead-container {
     position: fixed;
     top: 0;
     width: 100%;
@@ -6,7 +6,8 @@
     transform: translateY(0);
     transition: transform 0.3s ease;
 }
-#guide{
+
+#guide {
     position: fixed;
     top: var(--headerHeight);
     right: 0;
@@ -19,32 +20,39 @@
     transition: 0.3s ease-in-out;
 }
 
-#page-manager{
+#page-manager {
     margin-left: var(--sideBarHeight);
     transition: 0.3s ease-in-out;
-    .main-browse{
+    .main-browse {
         min-height: 100vh;
         padding-top: var(--headerHeight);
         background-color: var(--browserColor);
     }
 }
 
-.active-hamburger{
-    #guide{
+
+/**---------Run time add classes----------**/
+
+.active-hamburger {
+    #guide {
         left: calc(var(--sideBarHeight) - var(--sideBarHeight)*2);
     }
-    #page-manager{
+    #page-manager {
         margin-left: calc(var(--sideBarHeight) - var(--sideBarHeight));
     }
 }
 
 
+/**---------END Run time add classes----------**/
+
+
+/**---------For Mobile Device----------**/
 
 @media screen and (max-width: 40em) {
-    #page-manager{
+    #page-manager {
         margin-left: 0;
     }
-    .overly-backdrop{
+    .overly-backdrop {
         position: fixed;
         left: 0;
         right: 0;
@@ -53,14 +61,14 @@
         z-index: -2;
         background-color: rgba(0, 0, 0, 0.5);
     }
-    #guide{
+    #guide {
         width: 75%;
     }
-    .active-hamburger{
-        #guide{
+    .active-hamburger {
+        #guide {
             left: -100%;
         }
-        #page-manager{
+        #page-manager {
             margin-left: 0;
         }
     }

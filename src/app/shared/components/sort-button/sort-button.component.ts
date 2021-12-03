@@ -12,9 +12,9 @@ export class SortButtonComponent implements OnInit {
   public sortOrder = SORT_ORDER_TYPE;
   public orderType: string = SORT_ORDER_TYPE.DEF;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   /**Sorting value change base on our previous value */
   public changeSortType() {
@@ -30,9 +30,6 @@ export class SortButtonComponent implements OnInit {
         break;
     }
     //Emit Event
-    this.sortCallback.emit({
-      type: APP_ENUM_TYPE.CHANGE,
-      value: this.orderType,
-    });
+    this.sortCallback.emit({ type: APP_ENUM_TYPE.CHANGE, value: this.orderType });
   }
 }

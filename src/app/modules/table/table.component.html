@@ -3,6 +3,7 @@
         <div class="container">
             <div class="full full-table-view">
                 <table>
+                    <!--Header--->
                     <tr>
                         <th>Id</th>
                         <th>Name <sap-sort-btn (sortCallback)="sorting($event, sortingName.NAME)"></sap-sort-btn></th>
@@ -11,6 +12,7 @@
                         <th>Phone</th>
                         <th>Address</th>
                     </tr>
+                    <!--Data Rendering--->
                     <ng-container *ngFor="let user of users">
                         <tr>
                             <td>{{user?.id}}</td>
@@ -21,6 +23,7 @@
                             <td>{{user?.address?.city}}, {{user?.address?.street}} {{user?.address?.zipcode}}</td>
                         </tr>
                     </ng-container>
+                    <!--Loader...--->
                     <tr *ngIf="isApiCallInProgress">
                         <td colspan="6" class="tc">Loading... please wait</td>
                     </tr>

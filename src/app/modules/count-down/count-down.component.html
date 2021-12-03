@@ -1,22 +1,31 @@
 <div class="row">
     <div class="container">
-        <h1>Count down timer with {{(routeType == counterRouteType.DEFAULT ? 'Input/Output' : 'Subject')}}</h1>
-        <div class="full dft">
-            <section class="_u-flex0 timer-counter-view">
-            <sap-timer-counter-rendered [count]="countDownTiming"></sap-timer-counter-rendered>
-            </section>
-            <section class="_u-flex1 timer-counter-action">
-                <sap-timer-counter-actions [routeType]="routeType" (timerActionCallback)="counterChildrenEvents($event)"></sap-timer-counter-actions>
-            </section>
+        <!--Page heading--->
+        <div class="title-heading">
+            <h1>Count down timer with {{(routeType == counterRouteType.DEFAULT ? 'Input/Output' : 'Subject')}}</h1>
         </div>
-        <div class="full dft dft-2-row">
-            <section class="_u-flex0 timer-count-logs">
-                <sap-timer-counter-logs [logs]="timerLogs"></sap-timer-counter-logs>
-            </section>
-            <section class="_u-flex1 timer-count-tracker">
-                <sap-timer-counter-tracker [logs]="timerTracker"></sap-timer-counter-tracker>
-            </section>
-
+        <div class="ui-column-wap">
+            <div class="ui-column clear">
+                <!--counter time div--->
+                <div class="ui-lg-6 ui-lg-6 ui-sm-12">
+                    <sap-timer-counter-rendered [count]="countDownTiming"></sap-timer-counter-rendered>
+                </div>
+                <!--counter action div--->
+                <div class="ui-lg-6 ui-lg-6 ui-sm-12">
+                    <sap-timer-counter-actions [routeType]="routeType" (timerActionCallback)="counterChildrenEvents($event)"></sap-timer-counter-actions>
+                </div>
+            </div>
+    
+            <div class="ui-column clear">
+                <!--counter logs div--->
+                <div class="ui-lg-6 ui-lg-6 ui-sm-12">
+                    <sap-timer-counter-logs [logs]="timerLogs"></sap-timer-counter-logs>
+                </div>
+                <!--counter tracker div--->
+                <div class="ui-lg-6 ui-lg-6 ui-sm-12">
+                    <sap-timer-counter-tracker [logs]="timerTracker"></sap-timer-counter-tracker>
+                </div>
+            </div>
         </div>
     </div>
 </div>

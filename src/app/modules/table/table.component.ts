@@ -39,8 +39,7 @@ export class TableComponent implements OnInit, OnDestroy {
     }, (error) => {
       this.isApiCallInProgress = false;
       //Error
-    }
-    );
+    });
   }
 
   /**

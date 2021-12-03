@@ -11,15 +11,12 @@ export class SelectOptionsComponent implements OnInit {
   @Input() options!: Array<any>;
   @Output() selectCallback = new EventEmitter<IEventResponse>();
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   public selectChangeEvent(event: any) {
     //Emit Event
-    this.selectCallback.next({
-      type: APP_ENUM_TYPE.CHANGE,
-      value: event.target.value,
-    });
+    this.selectCallback.next({ type: APP_ENUM_TYPE.CHANGE, value: event.target.value });
   }
 }

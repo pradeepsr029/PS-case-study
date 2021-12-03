@@ -1,6 +1,7 @@
 <div class="row">
     <div class="container">
         <div class="pro-header">
+            <!--Products filters options--->
             <div class="full dft">
                 <div class="pro-title _u-flex1 ">Online Product Items</div>
                 <div class="_u-flex0">
@@ -12,11 +13,13 @@
             </div>
         </div>
         <div class="product-rendered clear">
+            <!--Products cards rendering--->
             <ng-container *ngIf="isApiCallInProgress">
                 <div class="pro-item ui-sm-12" *ngFor="let p of [1,2,3,4]" [ngClass]="{'ui-lg-3 ui-md-3 ': uiLayout==appEnum.GRID_VIEW, 'ui-lg-6 ui-md-6 ': uiLayout==appEnum.LIST_VIEW}">
                     <sap-product-rendered></sap-product-rendered>
                 </div>
             </ng-container>
+            <!--Products cards shimmer rendering--->
             <ng-container *ngFor="let product of products">
                 <div class="pro-item ui-sm-12" [ngClass]="{'ui-lg-3 ui-md-3 ': uiLayout==appEnum.GRID_VIEW, 'ui-lg-6 ui-md-6 ': uiLayout==appEnum.LIST_VIEW}">
                     <sap-product-rendered [product]="product"></sap-product-rendered>

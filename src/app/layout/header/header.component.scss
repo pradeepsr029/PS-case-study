@@ -1,66 +1,75 @@
 header {
-  min-height: var(--headerHeight);
-  width: 100%;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
-  z-index: 100;
-  position: relative;
-  background: var(--white);
-}
-.hamburger-icon{
-  button{
-    height: 40px;
-    width: 40px;
-    border: none;
-    margin-right: 10px;
-    border-radius: 50px;
-    background-color: transparent;
-    cursor: pointer;
-    svg{
-      vertical-align: middle;
-    }
-  }
-  button:active{
-    background-color: #ebebeb;
-  }
-}
-.master-body {
-  padding: 0 24px;
-  min-height: var(--headerHeight);
-}
-.auth-btns {
-  button {
-    color: var(--white);
-    background-color: var(--app);
-    text-transform: uppercase;
-  }
-}
-.master-search{
-  margin-left: 10px;
-  input {
-    position: relative;
+    min-height: var(--headerHeight);
     width: 100%;
-    height: inherit;
-    background: #f2f2f4;
-    color: #4f4f4f;
-    border-radius: 4px;
-    border: 2px solid #f2f2f2;
-    outline: none;
-    z-index: 1;
-    margin-left: 15px;
-    padding: 10px;
-  }
-}
-.search-logo-marge {
-  max-width: 500px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    position: relative;
+    background: var(--white);
 }
 
+.hamburger-icon {
+    button {
+        height: 40px;
+        width: 40px;
+        border: none;
+        margin-right: 10px;
+        border-radius: 50px;
+        background-color: transparent;
+        cursor: pointer;
+        svg {
+            vertical-align: middle;
+        }
+    }
+    button:active {
+        background-color: #ebebeb;
+    }
+}
+
+.master-body {
+    padding: 0 24px;
+    min-height: var(--headerHeight);
+}
+
+.auth-btns {
+    button {
+        color: var(--white);
+        background-color: var(--app);
+        text-transform: uppercase;
+    }
+}
+
+.master-search {
+    margin-left: 10px;
+    input {
+        position: relative;
+        width: 100%;
+        height: inherit;
+        background: #f2f2f4;
+        color: #4f4f4f;
+        border-radius: 4px;
+        border: 2px solid #f2f2f2;
+        outline: none;
+        z-index: 1;
+        margin-left: 15px;
+        padding: 10px;
+    }
+}
+
+.search-logo-marge {
+    max-width: 500px;
+}
+
+
 /*******************Theme**************/
+
 .product-theme {
-  background-color: #edcf3c;
+    background-color: #edcf3c;
 }
+
 .count-theme {
-  background-color: #32d98c;
+    background-color: #32d98c;
 }
+
 .table-theme {
-  background-color: #2162d7;
+    background-color: #2162d7;
 }

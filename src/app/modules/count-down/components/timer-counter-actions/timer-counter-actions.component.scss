@@ -25,7 +25,11 @@
   background-color: var(--black);
   color: var(--white);
 }
-
+.label{
+  font-size: 14px;
+  padding-top: 6px;
+  color: #666;
+}
 input {
   min-width: 200px;
   padding: 5px;
