@@ -1,23 +1,40 @@
-.title-heading{
-  padding: 0 15px;
-  margin-top: 2em;
+.title-heading {
+    padding: 0 15px;
+    margin-top: 2em;
 }
-.ui-column-wap{
-  margin-top: 2em;
-  border: 1px solid #cfcfcf;
-  border-radius: 4px;
-  overflow: hidden;
-  .ui-column{
-    position: relative;
-    width: 100%;
-    .ui-lg-6{
-      min-height: 100px;
+
+.ui-column-wap {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    overflow: hidden;
+    .ui-column {
+        position: relative;
+        width: 100%;
+        .ui-lg-6 {
+            min-height: 100px;
+        }
     }
-  }
-  .ui-column:first-child{
-    border-bottom: 1px solid #cfcfcf;
-  }  
-  .ui-column .ui-lg-6:first-child{
-    border-right: 1px solid #cfcfcf;
-  }
+    .ui-column:first-child {
+        border-bottom: 1px solid #cfcfcf;
+    }
+    .ui-column .ui-lg-6:first-child {
+        border-right: 1px solid #cfcfcf;
+    }
+}
+
+
+/**---------For Mobile Device----------**/
+
+@media screen and (max-width: 40em) {
+    .ui-column-wap {
+        .ui-column:first-child {
+            border-bottom: 1px solid #cfcfcf;
+        }
+        .ui-column .ui-lg-6:first-child {
+            border-right: none;
+            border-bottom: 1px solid #cfcfcf;
+        }
+    }
 }

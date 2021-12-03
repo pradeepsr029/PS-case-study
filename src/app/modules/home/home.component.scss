@@ -1,4 +1,4 @@
-.banner-item{
+.banner-item {
     padding: 2em 0;
     position: relative;
     overflow: hidden;
@@ -10,7 +10,8 @@
         display: flex;
     }
 }
-.horizTranslate{
+
+.horizTranslate {
     position: relative;
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -20,12 +21,13 @@
     align-items: center;
     display: flex;
     left: unset;
-    transform: translate3d(calc(-1 * 900px),0,0);
+    transform: translate3d(calc(-1 * 900px), 0, 0);
     width: 900px;
     width: 18900px;
     transition: transform 1s ease-in-out;
 }
-.banner-view{
+
+.banner-view {
     display: flex;
     margin: 0 10px;
     vertical-align: top;
@@ -34,7 +36,7 @@
     height: calc(900px * .341);
     border-radius: 8px;
     overflow: hidden;
-    img{
+    img {
         position: absolute;
         top: 0;
         left: 0;
@@ -45,7 +47,7 @@
     }
 }
 
-.slider-btns{
+.slider-btns {
     display: flex;
     position: absolute;
     top: 50%;
@@ -57,38 +59,40 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    button{
+    button {
         min-width: 40px;
         height: 40px;
         background-color: rgba(0, 0, 0, 0.5);
-        fill:#fff;
-        svg{
+        fill: #fff;
+        svg {
             width: 24px;
             height: 24px;
             vertical-align: middle;
-            fill:inherit;
+            fill: inherit;
         }
     }
 }
-.slider-btns.pre{
+
+.slider-btns.pre {
     left: 0;
-    button{
-        svg{
+    button {
+        svg {
             transform: rotate(180deg);
         }
     }
 }
-.slider-btns.next{
+
+.slider-btns.next {
     right: 0;
 }
 
-.inner-heading{
+.inner-heading {
     padding: 0 15px;
-    .heading{
+    .heading {
         color: #fff;
         padding-bottom: 0.5em;
         border-bottom: 1px solid #dddddd;
-        span{
+        span {
             background-color: #5541fe;
             padding: 5px;
             border-radius: 5px;
@@ -96,6 +100,6 @@
     }
 }
 
-.route-view-card{
+.route-view-card {
     margin-bottom: 30px;
 }

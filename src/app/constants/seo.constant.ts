@@ -1,8 +1,8 @@
 export const META_DATA = {
   HOME: {
-    title: `India | Digital-first, customer-centered business transformation`,
+    title: `Training | Online Classes`,
     description: `India helps clients transform into digitally enabled organizations by planning and implementing the right engineering, experience and data solutions to keep them relevant to customers.`,
-    keywords: `Digital-first, user-experience, website making, top website`,
+    keywords: `Online, online class, top class, online best class`,
     image: '',
   },
   PRODUCT: {
