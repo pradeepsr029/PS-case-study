@@ -103,3 +103,19 @@
 .route-view-card {
     margin-bottom: 30px;
 }
+
+
+/**---------For Mobile Device----------**/
+
+@media screen and (max-width: 40em) {
+    .banner-item {
+        .bannerWrapper {
+            max-width: 1400px;
+            width: calc(100vw - 40px);
+        }
+    }
+    .banner-view {
+        width: calc(100vh - 40px);
+        height: 200px;
+    }
+}

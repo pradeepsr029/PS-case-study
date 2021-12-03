@@ -60,6 +60,9 @@ export class CountDownComponent implements OnInit, OnDestroy {
    * @summary Start timer common function
    */
   public startPauseTimer(endTime: number) {
+    /**Note: Timer already running*/
+    if (this.timer) { return; };
+
     this.countDownTiming = endTime;
     ++this.timerTracker.started;
     this.timerLogs.push({ time: new Date(), type: 'STARTED' });
@@ -117,5 +120,6 @@ export class CountDownComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.deConstructor();
+    this.clearTimeInterval();
   }
 }
