@@ -1,18 +1,27 @@
 <header [ngClass]="cls">
     <section>
-        <div class="container">
+        <div class="">
             <div class="master-body dft">
                 <div class="_u-flex1">
                     <div class="search-logo-marge dft">
-                        <div class="_u-flex2">
+                        <div class="_u-flex0 hamburger-icon">
+                            <button type="button" (click)="changeHamburgerOption()">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                                    fill="#000000">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="_u-flex0">
                             <sap-logo></sap-logo>
                         </div>
-                        <div class="_u-flex1">
+                        <div class="_u-flex1 hide-sm master-search">
                             <input type="search" placeholder="Search our products">
                         </div>
                     </div>
                 </div>
-                <div class="_u-flex2 auth-btns">
+                <div class="_u-flex0 auth-btns">
                     <button class="btn-n">Sign in</button>
                 </div>
             </div>

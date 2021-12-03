@@ -1,9 +1,7 @@
-.home-section{
-    // background-color: pink;
-}
 .banner-item{
     padding: 2em 0;
     position: relative;
+    overflow: hidden;
     .bannerWrapper {
         max-width: 900px;
         margin: 0 auto;
@@ -100,32 +98,4 @@
 
 .route-view-card{
     margin-bottom: 30px;
-    .inner-route-card{
-        background-color:#ffbf00;
-        padding-bottom: 40%;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        cursor: pointer;
-        .card-info{
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(4, 4, 4, 0.33);
-            .card-title{
-                color: #fff;
-            }
-        }
-    }
-    .inner-route-card:hover{
-        box-shadow: 0 2px 2px #919191;
-    }
-    .active-route{
-        background-color: #6161ff;
-    }
 }

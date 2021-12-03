@@ -1,6 +1,5 @@
-<sap-header></sap-header>
-
 <section class="home-section">
+    <!--Banner-->
     <div class="banner-item">
         <div class="bannerWrapper">
             <div class="horizTranslate" #horizTranslate>
@@ -13,30 +12,37 @@
         </div>
         <div class="pre slider-btns">
             <button type="button" class="btn-n">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path
+                        d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01z" />
+                </svg>
             </button>
         </div>
         <div class="next slider-btns">
             <button type="button" class="btn-n">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path
+                        d="M9.31 6.71c-.39.39-.39 1.02 0 1.41L13.19 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.72 6.7c-.38-.38-1.02-.38-1.41.01z" />
+                </svg>
             </button>
         </div>
     </div>
+    <!--END Banner-->
 
+    <!--Application Routes Card-->
     <div class="container">
         <div class="inner-heading">
             <h1 class="heading"><span>Application All Routes</span></h1>
         </div>
         <ng-container *ngFor="let route of homeRoutes">
-            <div class="ui-lg-3 route-view-card">
+            <div class="ui-lg-3 ui-md-3 ui-sm-6 route-view-card">
                 <a [routerLink]="[route.route]" rel="noopener noreferrer">
-                    <div class="inner-route-card" routerLinkActive="active-route" >
-                        <div class="card-info ellip">
-                            <span class="card-title">{{route?.name}}</span>
-                        </div>
-                    </div>
+                    <sap-vertical-route-card-renderer [card]="route"></sap-vertical-route-card-renderer>
                 </a>
             </div>
         </ng-container>
     </div>
+    <!--End Application Routes Card-->
 </section>

@@ -35,11 +35,11 @@ export const HOME_BANNER = [
   { name: 'Banner 1', value: 'https://jssors8.azureedge.net/demos/img/gallery/980x380/038.jpg' },
 ];
 
-export const APPLICATION_ROUTES = [
-  { name: 'Home', route:  HOME.fullUrl},
-  { name: 'Product', route:  PRODUCT.fullUrl},
-  { name: 'Count Timer', route:  COUNT_DOWN.fullUrl},
-  { name: 'Count Timer with Subject', route:  COUNT_DOWN_SUB.fullUrl},
-  { name: 'Table', route:  TABLE.fullUrl},
-  { name: 'Dynamically Create Div', route:  DYNAMICALLY_DIV.fullUrl},
+export const SIDE_MENU_LIST = [
+  { name: 'Home', route: HOME.fullUrl, icon: "./assets/svgIcon/home_black.svg" },
+  { name: 'Product', route: PRODUCT.fullUrl, icon: "./assets/svgIcon/product_black.svg" },
+  { name: 'Counter', route: COUNT_DOWN.fullUrl, icon: "./assets/svgIcon/counter_black.svg" },
+  { name: 'Subject Counter', route: COUNT_DOWN_SUB.fullUrl, icon: "./assets/svgIcon/counter_black2.svg" },
+  { name: 'Table', route: TABLE.fullUrl, icon: "./assets/svgIcon/table_black.svg" },
+  { name: 'Dynamically Div', route: DYNAMICALLY_DIV.fullUrl, icon: "./assets/svgIcon/div_black.svg" },
 ];

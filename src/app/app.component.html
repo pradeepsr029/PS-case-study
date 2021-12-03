@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+
+<div id="content" [ngClass]="{'active-hamburger': isHiddenHamburger}">
+    <!--Master Header-->
+    <div id="masthead-container">
+        <sap-header (headerCallback)="headerCallbackEvents($event)"></sap-header>
+    </div>
+    <!--Side Bar Menu-->
+    <div id="guide">
+        <div [ngClass]="{'overly-backdrop': !isHiddenHamburger}" (click)="isHiddenHamburger=true" class="overly-backdrop"></div>
+        <sap-app-sidebar></sap-app-sidebar>
+    </div>
+    <!--All Routes Load Page Manager-->
+    <div id="page-manager">
+        <div class="main-browse">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

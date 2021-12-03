@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { APPLICATION_ROUTES, HOME_BANNER } from 'src/app/constants/app.constant';
+import { SIDE_MENU_LIST, HOME_BANNER } from 'src/app/constants/app.constant';
 
 @Component({
   selector: 'sap-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   public banners=HOME_BANNER;
   private mainViewBannerIndex = -1;
   private totalNumberOfBanner=HOME_BANNER.length;
-  public homeRoutes=APPLICATION_ROUTES;
+  public homeRoutes=SIDE_MENU_LIST;
 
   constructor() { }
 

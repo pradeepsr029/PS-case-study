@@ -1,7 +1,10 @@
-.full-table-view {
-  margin-top: 3em;
+.container{
   padding-left: 15px;
   padding-right: 15px;
+}
+.full-table-view {
+  margin-top: 3em;
+  overflow: auto;
 }
 .tc {
   text-align: center;
@@ -26,5 +29,8 @@ table {
   }
   tr:nth-child(even) {
     background-color: #f2f2f2;
+  }
+  tr:not(:first-child),td:not(:first-child) {
+    min-width: 150px;
   }
 }

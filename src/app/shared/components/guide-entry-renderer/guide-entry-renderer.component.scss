@@ -1,0 +1,25 @@
+.guide-item{
+    padding: 0 24px;
+    .guide-icon{
+        button{
+            width: 40px;
+            height: 40px;
+            border: none;
+            padding: 9px;
+            background-color: transparent;
+            margin-right: 6px;
+            cursor:inherit;
+        }
+    }
+    .guide-title{
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--rgb00);
+    }
+}
+.guide-item:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.active{
+    background-color: rgba(0, 0, 0, 0.1)!important;
+}

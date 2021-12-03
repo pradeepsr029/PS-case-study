@@ -1,0 +1,12 @@
+<a [routerLink]="[list?.route]" rel="noopener noreferrer">
+    <div class="guide-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [title]="list?.name">
+        <div class="dft">
+            <div class="_u-flex0 guide-icon">
+                <button type="button">
+                    <img [src]="list?.icon" alt="Icon" />    
+                </button>
+            </div>
+            <div class="_u-flex1 guide-title">{{list?.name}}</div>
+        </div>
+    </div>
+</a>

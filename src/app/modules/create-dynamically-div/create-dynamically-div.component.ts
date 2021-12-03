@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'sap-create-dynamically-div',
   templateUrl: './create-dynamically-div.component.html',
   styleUrls: ['./create-dynamically-div.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class CreateDynamicallyDivComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('innerAppend', { static: true }) innerAppend!: ElementRef;
@@ -11,7 +12,7 @@ export class CreateDynamicallyDivComponent implements OnInit, AfterViewInit, OnD
   constructor() { }
 
   ngOnInit(): void {
-    this.createDynamicallyDiv(30);
+    this.createDynamicallyDiv(20);
   }
 
   ngAfterViewInit() {
@@ -31,9 +32,12 @@ export class CreateDynamicallyDivComponent implements OnInit, AfterViewInit, OnD
     for (let index = 0; index < count; index++) {
       // const element = array[index];
       const creatDiv = document.createElement('div');
-      creatDiv.innerHTML = `<button type="button">Index ${lastCreateElement} Click</button>`;
+      creatDiv.innerHTML = `
+        <div class="inner-create-box"><button type="button">Index ${lastCreateElement} Click</button></div>
+      `;
       creatDiv.setAttribute('track-id', lastCreateElement);
-      creatDiv.style.cssText = `height:200px;width:200px;background-color:red;border-radius:4px;display: flex;align-items: center;justify-content: center;float:left;margin-left: 15px;margin-bottom: 15px;`;
+      creatDiv.className="ui-lg-3 ui-md-3 ui-sm-6",
+      creatDiv.style.cssText = `height: 250px;position:relative;margin-bottom:30px;`;
       ++lastCreateElement;
       documentFragment.appendChild(creatDiv);
     }
