@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MetaService, META_DATA } from '@meta';
 import { SIDE_MENU_LIST, HOME_BANNER } from 'src/app/constants/app.constant';
 
 @Component({
@@ -8,25 +9,29 @@ import { SIDE_MENU_LIST, HOME_BANNER } from 'src/app/constants/app.constant';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('horizTranslate', { static: true }) horizTranslate!: ElementRef;
-  public banners=HOME_BANNER;
+  public banners = HOME_BANNER;
   private mainViewBannerIndex = -1;
-  private totalNumberOfBanner=HOME_BANNER.length;
-  public homeRoutes=SIDE_MENU_LIST;
+  private totalNumberOfBanner = HOME_BANNER.length;
+  public homeRoutes = SIDE_MENU_LIST;
 
-  constructor() { }
+  constructor(
+    private _metaService: MetaService
+  ) { }
 
   ngOnInit(): void {
-    this.translateBanner()
+    this.translateBanner();
+    /**Update Meta*/
+    this._metaService.setTags(META_DATA.HOME);
   }
 
   private translateBanner() {
     setInterval(() => {
-      if(this.mainViewBannerIndex===this.totalNumberOfBanner){
+      if (this.mainViewBannerIndex === this.totalNumberOfBanner) {
         --this.mainViewBannerIndex;
-      }else{
+      } else {
         ++this.mainViewBannerIndex;
       }
-      this.horizTranslate.nativeElement.style.cssText=`transform: translate3d(calc(${this.mainViewBannerIndex} * 900px),0,0);left: unset`
+      this.horizTranslate.nativeElement.style.cssText = `transform: translate3d(calc(${this.mainViewBannerIndex} * 900px),0,0);left: unset`
     }, 2000);
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MetaService, META_DATA } from '@meta';
 import { first, Subscription } from 'rxjs';
 import { APP_ENUM_TYPE, PRODUCT_FILTER } from 'src/app/constants/app.constant';
 import { IEventResponse } from 'src/app/interfaces/emitterCallback';
@@ -17,10 +18,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
   public appEnum = APP_ENUM_TYPE;
   public isApiCallInProgress: boolean = false;
 
-  constructor(private _productService: ProductService) { }
+  constructor(
+    private _productService: ProductService,
+    private _metaService: MetaService
+  ) { }
 
   ngOnInit(): void {
     this.getProductList();
+    /**Update Meta*/
+    this._metaService.setTags(META_DATA.PRODUCT);
   }
 
   /**

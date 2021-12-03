@@ -35,11 +35,6 @@ export class MetaService {
    * @return void
    */
   setTags(config: TypingSEO): void {
-    //Only Production SEO working
-    if (!environment.production || !config) {
-      return;
-    }
-
     if (config.title !== undefined) {
       this.title(config.title, config.titleSuffix);
     }

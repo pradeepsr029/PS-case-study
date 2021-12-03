@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MetaService, META_DATA } from '@meta';
 
 @Component({
   selector: 'sap-create-dynamically-div',
@@ -9,10 +10,14 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, Vie
 export class CreateDynamicallyDivComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('innerAppend', { static: true }) innerAppend!: ElementRef;
 
-  constructor() { }
+  constructor(
+    private _metaService:MetaService
+  ) { }
 
   ngOnInit(): void {
     this.createDynamicallyDiv(20);
+    /**Update Meta*/
+    this._metaService.setTags(META_DATA.DYNAMICALLY_DIV);
   }
 
   ngAfterViewInit() {

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MetaService, META_DATA } from '@meta';
 import { Subscription } from 'rxjs';
 import { COUNTER_MODULE_ROUTE_TYPE } from 'src/app/constants/app.constant';
 import { CountService } from './services/count.service';
@@ -25,7 +26,11 @@ export class CountDownComponent implements OnInit, OnDestroy {
   public routeType = COUNTER_MODULE_ROUTE_TYPE.DEFAULT; //Default
   public counterRouteType = COUNTER_MODULE_ROUTE_TYPE;
 
-  constructor(private _router: Router, private _countService: CountService) {}
+  constructor(
+    private _router: Router,
+    private _countService: CountService,
+    private _metaService: MetaService
+  ) { }
 
   ngOnInit(): void {
     if (this._router.url.indexOf('/subject') != -1) {
@@ -33,6 +38,8 @@ export class CountDownComponent implements OnInit, OnDestroy {
       //Listener
       this.moduleObservableListener();
     }
+    /**Update Meta*/
+    this._metaService.setTags(META_DATA.COUNT_DOWN_TIMER);
   }
 
   /**
@@ -77,7 +84,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
 
   /******Reset Timer*******/
   private reset() {
-    if (!this.timer) {return;}
+    if (!this.timer) { return; }
     this.countDownTiming = 0;
     this.clearTimeInterval();
   }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MetaService, META_DATA } from '@meta';
 import { first, Subscription } from 'rxjs';
 import { SORT_ORDER_TYPE } from 'src/app/constants/app.constant';
 import { IEventResponse } from 'src/app/interfaces/emitterCallback';
@@ -15,10 +16,15 @@ export class TableComponent implements OnInit, OnDestroy {
   public isApiCallInProgress: boolean = false;
   public sortingName = SORT_NAME;
 
-  constructor(private _tableService: TableService) { }
+  constructor(
+    private _tableService: TableService,
+    private _metaService: MetaService
+  ) { }
 
   ngOnInit(): void {
     this.getUserListing();
+    /**Update Meta*/
+    this._metaService.setTags(META_DATA.TABLE);
   }
 
   /**
@@ -30,10 +36,10 @@ export class TableComponent implements OnInit, OnDestroy {
     this._ApiSubscription = this._tableService.getUserListing().pipe(first()).subscribe((response) => {
       this.users = response;
       this.isApiCallInProgress = false;
-    },(error) => {
-        this.isApiCallInProgress = false;
-        //Error
-      }
+    }, (error) => {
+      this.isApiCallInProgress = false;
+      //Error
+    }
     );
   }
 
